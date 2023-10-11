@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+    <section>
+        <h1>Les Boucles</h1>
+<p>Les boucles sont utilisées pour répéter l'exécution d'un bloc de code tant qu'une condition est vraie ou jusqu'à ce qu'une condition soit atteinte. Les boucles permettent de simplifier et d'automatiser les tâches répétitives dans un programme. 
+    Les boucles les plus couramment utilisées en C sont les boucles for, while et do-while.</p>
+<ol class="li">
+    <li>Boucle for :</li>
+La boucle (for) est utilisée lorsque le nombre d'itérations est connu à l'avance. Elle est composée de trois parties : l'initialisation, la condition et l'incrémentation. Voici un exemple :
+<pre>for (int i = 0; i < 5; i++) {
+    printf("%d\n", i);
+}</pre>
+Dans cet exemple, la boucle (for) itérera 5 fois. L'initialisation 'int i = 0' est exécutée une seule fois au début. La condition 'i &lt; 5' est vérifiée avant chaque itération. Si la condition est vraie, le bloc de code à l'intérieur de la boucle est exécuté, puis l'incrémentation 'i++' est effectuée.
+    <li>Boucle while :</li>
+La boucle (while) est utilisée lorsque le nombre d'itérations n'est pas connu à l'avance et dépend d'une condition. Voici un exemple <br>
+<pre>int i = 0;
+
+while (i < 5) {
+    printf("%d\n", i);
+    i++;
+}</pre>
+Dans cet exemple, la boucle (while) itérera tant que la condition 'i &gt; 5' est vraie. À chaque itération, le bloc de code à l'intérieur de la boucle est exécuté, puis l'incrémentation 'i++' est effectuée. Il est important de s'assurer que la condition finira par devenir fausse pour éviter une boucle infinie.
+    <li>Boucle do  while :</li>
+La boucle (do-while) est similaire à la boucle (while), mais la condition est évaluée après l'exécution du bloc de code. Cela garantit que le bloc de code est exécuté au moins une fois. Voici un exemple :
+<pre>
+int i = 0;
+
+do {
+    printf("%d\n", i);
+    i++;
+} while (i < 5);
+</pre>
+Dans cet exemple, le bloc de code est exécuté une première fois sans vérifier la condition 'i &gt; 5'. Ensuite, la condition est évaluée. Si elle est vraie, le bloc de code est réexécuté, sinon la boucle se termine.
+<p>Il est également possible d'utiliser des instructions "break" et "continue" à l'intérieur des boucles pour contrôler leur comportement. L'instruction "break" permet de sortir immédiatement de la boucle, tandis que l'instruction "continue" permet de passer à l'itération suivante. Ces instructions sont généralement utilisées en fonction de conditions spécifiques à l'intérieur de la boucle.</p>
+<p class="resume">Les boucles en C offrent une manière flexible et puissante de répéter des blocs de code. Il est important de faire attention à la logique de la boucle pour éviter les boucles infinies et s'assurer que les conditions sont bien verifiés.</p>
+    </section>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>

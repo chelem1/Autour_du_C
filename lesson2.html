@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+    <section>
+        <h1>Les Conditions</h1>
+<p>Les conditions sont utilisées pour exécuter des blocs de code uniquement si certaines conditions sont satisfaites. Les conditions sont généralement évaluées à partir d'expressions booléennes, c'est-à-dire des expressions qui produisent une valeur de vérité 
+(vrai ou faux).</p>
+<p>Les conditions en C sont généralement implémentées à l'aide des structures de contrôle <span>if</span>, <span>else if </span>et <span>else</span>. Voici un exemple simple :
+<pre>int a = 5;
+
+if (a > 0) {
+    printf("a est positif\n");
+} else if (a < 0) {
+    printf("a est négatif\n");
+} else {
+    printf("a est nul\n");
+}</pre>
+<br>Dans cet exemple, la condition "a > 0" est évaluée. Si elle est vraie, le bloc de code à l'intérieur du premier 'if' est exécuté et affiche "a est positif". Sinon, la condition 'a &lt; 0' est évaluée. Si elle est vraie, le bloc de code à l'intérieur du 'else if' est exécuté et affiche "a 
+est négatif". Si aucune des conditions précédentes n'est satisfaite, le bloc de code à l'intérieur du 'else' est exécuté et affiche "a est nul".</p>
+<p>Voici quelques opérateurs de comparaison couramment utilisés dans les conditions :
+<ul>
+    <li>== : égal à</li>
+    <li>!=  : différent de</li>
+    <li>&lt;   : inférieur à</li>
+    <li>&gt;  : supérieur à</li>
+	<li>&lt;= : inférieur ou égal à</li>
+    <li>&gt;= : supérieur ou égal à</li>
+</ul>
+Vous pouvez également combiner plusieurs conditions à l'aide des opérateurs logiques `&&` (ET) et `||` (OU). Par exemple :
+<pre>
+int a = 5;
+int b = 3;
+
+if (a > 0 && b > 0) {
+ printf("a et b sont tous deux positifs\n");
+}
+
+if (a > 0 || b > 0) {
+    printf("Au moins l'un des nombres a ou b est positif\n");
+}
+</pre><br>
+Dans cet exemple, les opérateurs logiques sont utilisés pour vérifier si (a) et (b) sont tous deux positifs (`&&`) ou si au moins l'un des deux est positif (`||`).<br>
+<p>On peut aussi utiliser (switch) si on évalue uniquement des nombres en C. Voici comment faire : <br>
+<pre>
+    int note=20;
+    switch(note){
+        case 5:
+            printf("Votre note est égale à 5");
+            break;
+        case 10:
+            printf("Votre note est ègale à 10");
+            break;
+        case 12:
+            printf("Votre note est égale à 12");
+            break;
+        case 15:
+            printf("Votre note est égale à 15");
+            break;
+        default:
+            printf("Votre note est égale à %d",note);
+    }
+</pre><br>
+Si la valeur de note est égale à l’une des constantes(5,10,12,15), la liste d’instructions
+correspondant est exècutée. Sinon la liste d’instructions  correspondant à default
+est exécutée. L’instruction default est facultative.
+</p>
+<p class="resume">En résumé, les conditions  permettent de prendre des décisions et d'exécuter des portions spécifiques de code en fonction de la satisfaction ou non de certaines conditions.</p>
+    </section>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>

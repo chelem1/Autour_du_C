@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body class="body">
+    <div id="corps">
+        <h1>Inscription</h1>
+        <form method="post" action="php/inscription.php" autocomplete="on">
+            <table class="table">
+                <tr>
+                    <td><label for="pseudoV">Pseudo </label></td>
+                    <td><input name="pseudo" type="text" maxlength="13" required placeholder="Daniel" id="pseudoV"></td>
+                </tr>
+                <tr>
+                    <td><label for="ageV">Age </label></td>
+                    <td><input name="age" type="number" maxlength="3" required placeholder="17ans" id="ageV"></td>
+                </tr>
+                <tr>
+                    <td><label for="number">Email </label></td>
+                    <td><input type="email" id="number" name="identifiant" maxlength="40" required placeholder="med@yahoo.fr"></td>
+                </tr>
+                <tr>
+                    <td><label for="motPasse">Mots de Passe</label></td>
+                    <td><input name="motsPasse" type="password" maxlength="13" id="motPasse" required></td>
+                </tr>
+                <tr>
+                    <td><label for="verifyPass">Confirmer Mots de Passe</label></td>
+                    <td><input name="motVerify" type="password" maxlength="13" id="verifyPass" required></td>
+                </tr>
+                <tr>
+                    <td class="con"><input type="submit" value="CONNEXION" class="c1"></td>
+                    <td><input type="reset" value="EFFACER" class="c1"></td>
+                </tr>
+            </table>
+        </form>
+        <p class="par"><a href="login.html">Vous Avez Un Compte</a></p>
+     </div>
+</body>
+</html>

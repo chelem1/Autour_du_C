@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>    <div id="general">
+        <section>
+            <h1>Les Fichiers</h1>
+<p>
+En langage C, les fichiers sont utilisés pour stocker des données de manière persistante ou pour effectuer des opérations d'entrée/sortie.
+Il existe plusieurs fonctions et bibliothèques pour travailler avec des fichiers. Voici quelques-unes des fonctions les plus couramment utilisées pour la manipulation de fichiers en C :</p>
+<ol class="li">
+    <li>fopen() :</li> Cette fonction est utilisée pour ouvrir un fichier. Avant de pouvoir effectuer des opérations sur un fichier, vous devez l'ouvrir en utilisant la fonction "fopen()". La fonction "fopen()" prend deux arguments : le nom du fichier et le mode d'ouverture. Le mode d'ouverture peut être "r" 
+    pour la lecture, "w" pour l'écriture (crée un nouveau fichier ou écrase un fichier existant), "a" pour l'écriture (ajoute des données à un fichier existant), etc. Par exemple, pour ouvrir un fichier en lecture :
+<pre>
+FILE *fichier;
+fichier = fopen("nom_du_fichier.txt", "r");
+if (fichier == NULL) {
+    printf("Erreur lors de l'ouverture du fichier.\n");
+    return 1;
+}</pre>
+
+    <li>fclose() : </li>Cette fonction est utilisée pour fermer un fichier qui a été ouvert avec "fopen()". Elle prend comme argument le pointeur de fichier du fichier à fermer.
+<pre>
+fclose(fichier);</pre>
+
+    <li>fscanf() :</li> Cette fonction est utilisée pour lire des données formatées à partir d'un fichier. Elle fonctionne de manière similaire à "scanf()", mais les données sont lues à partir du fichier plutôt que de l'entrée standard. Elle prend comme arguments le pointeur de fichier, le format de 
+lecture et des adresses de variables où stocker les données lues.
+<pre>
+int entier;
+fscanf(fichier, "%d", &entier);</pre>
+
+    <li>fgets() : </li>Cette fonction est utilisée pour lire une ligne de texte à partir d'un fichier. Elle prend comme arguments le pointeur de fichier, la taille maximale de la ligne à lire et un tableau de caractères où stocker la ligne lue.
+<pre>
+char ligne[100];
+fgets(ligne, 100, fichier);</pre>
+
+    <li>fprintf() : </li>Cette fonction est utilisée pour écrire des données formatées dans un fichier. Elle fonctionne de manière similaire à `printf()`, mais les données sont écrites dans le fichier plutôt que d'être affichées à l'écran. Elle prend 
+comme arguments le pointeur de fichier, le format d'écriture et les valeurs à écrire.
+<pre>
+fprintf(fichier, "Ceci est une ligne de texte : %d\n", entier);</pre>
+
+    <li>fputc() : </li>Cette fonction est utilisée pour écrire un caractère dans un fichier. Elle prend comme arguments le caractère à écrire et le pointeur de fichier.
+<pre>
+fputc('A', fichier);</pre>
+
+    <li>fgetc() :</li> Cette fonction est utilisée pour lire un caractère à partir d'un fichier. Elle prend comme argument le pointeur de fichier et renvoie le caractère lu.
+<pre>
+char caractere;
+caractere = fgetc(fichier);
+</pre></ul></p>
+<p>Ces fonctions sont quelques exemples courants pour travailler avec des fichiers en C. Il existe également d'autres fonctions et bibliothèques plus avancées pour effectuer des opérations de bas niveau sur les fichiers, telles que fwrite(), fread(), rewind(), feof(), etc. La documentation officielle de C fournit plus de détails sur ces fonctions.</p>
+<p class="resume">Les opérations de fichiers en C offrent une flexibilité pour travailler avec des données persistantes et pour effectuer des opérations d'entrée/sortie sur des fichiers.</span></p>
+  
+</section>
+        <section>
+            <h1>La Modularité</h1>
+<p>La modularité en langage C fait référence à la capacité de diviser un programme en modules distincts et autonomes.
+     Cela permet d'organiser le code en unités fonctionnelles indépendantes, facilitant ainsi la compréhension, la maintenance et la réutilisation du code.</p>
+Voici quelques concepts et techniques clés liés à la modularité en langage C :
+
+<ul class="li">
+    <li>Fonctions : </li>Les fonctions en C permettent de regrouper des instructions dans un bloc logique et réutilisable. Chaque fonction accomplit une tâche spécifique et peut être appelée depuis d'autres parties du programme. La modularité est encouragée en écrivant des fonctions bien définies et en évitant les fonctions trop longues ou trop complexes.
+    <li>Fichiers d'en-tête (header files) : </li>Les fichiers d'en-tête en C (extension .h) contiennent les déclarations de fonctions, les définitions de structures, les constantes, etc., nécessaires pour 
+    utiliser un module particulier. Ils sont inclus dans d'autres fichiers source à l'aide de la directive #include, permettant ainsi de partager des informations entre les modules.
+    <li>Fichiers source (source files) : </li>Les fichiers source en C (extension .c) contiennent le code réel des fonctions et des variables globales. Chaque module peut être mis en œuvre dans un fichier source séparé, facilitant ainsi la gestion et la collaboration sur un projet complexe.
+    <li>Compilation séparée : </li>La compilation séparée est une pratique courante en C pour traiter les modules individuellement. Chaque fichier source est compilé indépendamment pour générer des fichiers objets (extension .o). Ensuite, les fichiers objets sont liés ensemble pour créer un exécutable final. Cela permet de ne recompiler que les modules modifiés, ce qui accélère le processus de compilation lors de la modification d'un module spécifique.Voici la commande pour compilé plusieurs fichiers sources : <br><pre>gcc *.c -o nomDuFichier.exe</pre>
+    <li>Gestion des dépendances :</li> Lors de l'utilisation de plusieurs modules, il est important de gérer les dépendances entre eux. Les fichiers d'en-tête sont utilisés pour fournir les informations nécessaires sur les fonctions et les structures utilisées dans un module donné. L'utilisation appropriée des directives "#include" et des déclarations de prototypes de fonctions permet de résoudre les dépendances entre les modules.
+    <li>Interface claire : </li>Les modules doivent avoir une interface claire et bien définie, spécifiant les fonctions publiques et les structures de données disponibles pour les autres modules. Cela facilite l'utilisation et la compréhension des modules, tout en limitant l'accès non autorisé aux détails internes de l'implémentation.
+</ul>
+<p class="resume">En utilisant ces concepts et techniques de modularité, il est possible de développer des programmes en C bien structurés, modulaires et faciles à maintenir. Cela permet également de réutiliser des modules dans différents projets, favorisant ainsi la productivité et l'efficacité du développement logiciel.</p>
+    </section></div>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+        <section>
+            <h1>Le Pointeur</h1>
+<p>Le "pointeur en C" est un concept fondamental dans le langage de programmation C.
+     Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable.
+     En utilisant les pointeurs, vous pouvez manipuler directement la mémoire et accéder aux données stockées à des emplacements spécifiques.</p>
+<p>La déclaration d'un pointeur en C se fait en utilisant l'opérateur d'astérisque (*) avant le nom de la variable. Par exemple, pour déclarer un pointeur vers un entier, vous pouvez écrire :
+<pre>int *ptr;</pre>
+Dans cet exemple, "ptr" est un pointeur vers un entier. Il peut contenir l'adresse mémoire d'une variable de type entier. Notez que la déclaration d'un pointeur ne crée pas la variable pointée elle-même, elle réserve simplement de l'espace pour stocker l'adresse.</p>
+<p>Pour initialiser un pointeur avec l'adresse d'une variable existante, vous utilisez l'opérateur d'adresse (&). Par exemple :
+<pre>
+int x = 10;
+int *ptr = &x;</pre>
+Dans cet exemple, "ptr" est initialisé avec l'adresse de la variable "x". Vous pouvez maintenant utiliser "ptr" pour accéder à la valeur de "x" ou modifier sa valeur en utilisant l'opérateur de déréférencement (*). Par exemple :
+<pre>
+int value = *ptr;  // Accède à la valeur de x via le pointeur ptr
+*ptr = 20;         // Modifie la valeur de x via le pointeur ptr
+</pre></p>
+Il est important de noter que les pointeurs peuvent également être utilisés pour allouer dynamiquement de la mémoire à l'aide de fonctions telles que "malloc()" et "calloc()". Dans ce cas, le pointeur contiendra l'adresse de la mémoire allouée et peut être utilisé pour accéder à cette mémoire (voire le niveau 2).
+</section>
+    <section>
+            <h1>Comparaison Entre Pointeur et Tableaux</h1>
+<p>Un pointeur et un tableau sont deux concepts différents mais souvent utilisés de manière interchangeable, ce qui peut prêter à confusion. Voici les principales différences entre les pointeurs et les tableaux en C :</p>
+<ul class="li">
+    <li>Structure de données : </li>
+Un tableau est une structure de données qui représente une collection d'éléments de même type, tandis qu'un pointeur est une variable qui contient l'adresse mémoire d'une autre variable.
+    <li>Allocation de mémoire : </li>
+Les tableaux en C sont généralement alloués en déclarant une variable de tableau avec une taille fixe lors de la compilation. Par exemple :
+ <pre>int tableau[5];</pre>
+Ici, le tableau "tableau" est alloué avec 5 éléments entiers consécutifs en mémoire.<br>
+En revanche, les pointeurs ne sont pas automatiquement alloués avec de la mémoire pour stocker les données. Ils doivent être explicitement initialisés avec l'adresse d'une variable existante ou alloués dynamiquement à l'aide de fonctions comme "malloc()" ou "calloc()" que nous verrons dans la prochaine niveau. Par exemple :
+<pre>
+   int *pointeur;
+   pointeur = malloc(5 * sizeof(int));</pre>
+Dans cet exemple, un bloc de mémoire contenant 5 entiers est alloué dynamiquement, et l'adresse de ce bloc est assignée au pointeur "pointeur".
+    <li>Taille et itérations : </li>
+La taille d'un tableau en C est connue et fixe à la compilation. Vous pouvez accéder aux éléments du tableau en utilisant l'indice de tableau, par exemple "tableau[0]", "tableau[1]", etc. De plus, vous pouvez utiliser des boucles pour itérer sur les éléments du tableau.<br>
+
+Les pointeurs, en revanche, ne connaissent pas automatiquement la taille des données qu'ils pointent. Pour accéder aux éléments d'un tableau via un pointeur, vous devez connaître la taille des éléments et utiliser des arithmétiques de pointeurs pour accéder aux éléments individuels. Par exemple :
+<pre>
+   int *pointeur;
+   // Accéder aux éléments du tableau via le pointeur
+   for (int i = 0; i < 5; i++) {
+       printf("%d ", *(pointeur + i));
+   }
+</pre>
+Dans cet exemple, nous utilisons l'arithmétique des pointeurs ("pointeur + i") pour accéder aux éléments individuels du tableau pointé par 
+"pointeur".
+    <li>Passage en argument de fonction :</li>
+Lorsqu'un tableau est passé en argument à une fonction, il se comporte comme un pointeur. Cela signifie que la fonction reçoit une copie de l'adresse de départ du tableau, pas une copie complète du tableau lui-même. Ainsi, toute modification apportée aux éléments du tableau à l'intérieur de la fonction affectera également le tableau d'origine. Cela est dû au fait que les tableaux sont souvent représentés par des pointeurs vers leur premier élément.
+<pre>
+   void fonction(int tableau[]) {
+       tableau[0] = 10;  // Modification de l'élément du tableau
+   }
+
+   int main() {
+       int tableau[5];
+       fonction(tableau);
+       // La modification dans la fonction affecte le tableau d'origine
+       printf("%d", tableau[0]);  // Affiche 10
+       return 0;
+   }
+   </pre>
+</ul></p>
+<p class="resume">Les pointeurs en C peuvent être très puissants, mais ils nécessitent également une gestion minutieuse de la mémoire pour éviter les erreurs telles que les fuites de mémoire ou les accès illégaux. Une mauvaise utilisation des pointeurs peut entraîner des plantages de programme et des comportements indéfinis.</p></span>
+
+        </section>
+    </div>
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+        <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+        <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+        <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+    </footer>
+    </body>
+    </html>

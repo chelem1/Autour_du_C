@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+    <section>
+        <h1>Les Fonctions</h1>
+<p>Une fonction est un bloc de code autonome qui effectue une tâche spécifique. Les fonctions permettent de structurer et de moduler le code en le divisant en petites parties réutilisables. En C, les fonctions sont généralement définies avant leur utilisation.</p>
+<p>Voici comment déclarer et définir une fonction en C :
+<ul class="li">
+    <li>Déclaration de fonction :</li>
+La déclaration d'une fonction consiste à spécifier son type de retour, son nom et les types de ses paramètres. Par exemple, voici la déclaration d'une fonction qui calcule la somme de deux entiers :
+<br><pre>int somme(int a, int b);</pre>
+Dans cet exemple, la fonction s'appelle "somme" et elle prend deux paramètres de type "int". La fonction renvoie une valeur de type "int".
+    <li>Définition de fonction :</li>
+La définition d'une fonction consiste à implémenter son corps, c'est-à-dire le bloc de code qui est exécuté lorsque la fonction est appelée. Voici la définition de la fonction 
+"somme" :
+<pre>
+int somme(int a, int b) {
+    int resultat = a + b;
+    return resultat;
+}</pre>
+Dans cet exemple, la fonction "somme" prend deux entiers "a" et "b" comme paramètres. À l'intérieur de la fonction, la somme des deux entiers est calculée et stockée dans une variable locale appelée "resultat". Ensuite, la valeur de "resultat" est renvoyée en utilisant l'instruction "return".
+    <li>Appel de fonction :</li>
+Pour utiliser une fonction, vous devez l'appeler en fournissant les arguments appropriés. Par exemple, pour appeler la fonction "somme" et stocker le résultat dans une variable :
+<br><pre>int resultat = somme(3, 5);</pre>
+Dans cet exemple, la fonction "somme" est appelée avec les arguments 3 et 5. Le résultat de la fonction est assigné à la variable "resultat".</p>
+<p>Les fonctions en C peuvent également avoir des paramètres optionnels, des valeurs de retour vides (void), et peuvent être appelées à partir d'autres fonctions. Il est également possible de déclarer une fonction avant son utilisation en fournissant uniquement la signature (déclaration) de la fonction sans le corps (définition).</p>
+ <p class="resume">Les fonctions en C permettent de structurer et d'organiser le code de manière modulaire, ce qui facilite la compréhension, la réutilisation et la maintenance du code.</p>
+    </section>
+    <section>
+        <h1>Les Procédures</h1>
+<p>En langage C, le terme "procédure" n'est pas utilisé directement. Cependant, le concept de procédure peut être approximé en utilisant des fonctions avec un type de retour vide (void). 
+Une procédure est une routine ou un bloc de code qui effectue une tâche spécifique, mais ne renvoie aucune valeur. En C, vous pouvez définir des fonctions de type "void" pour créer des procédures.</p> 
+
+<p>Voici comment définir et utiliser une procédure en C :
+<ul class="li">
+    <li>Définition d'une procédure :</li>
+La définition d'une procédure se fait en déclarant une fonction avec un type de retour "void". Par exemple, voici une procédure qui affiche un message à l'écran :
+<pre>void afficherMessage() {
+    printf("Ceci est un message.\n");
+}</pre>
+Dans cet exemple, la procédure "afficherMessage" ne prend pas de paramètres et n'a pas de valeur de retour. Elle utilise la fonction `printf` pour afficher le message "Ceci est un message." suivi d'un saut de ligne.
+    <li>Appel d'une procédure :</li>
+Pour utiliser une procédure, vous devez simplement l'appeler en utilisant son nom, suivi de parenthèses vides (si elle ne prend pas de paramètres). Par exemple :
+<pre>afficherMessage();</pre>
+Dans cet exemple, la procédure "afficherMessage" est appelée, ce qui entraîne l'affichage du message à l'écran.
+</ul></p>
+<p>Les procédures peuvent également prendre des paramètres pour effectuer des opérations spécifiques. Par exemple, voici une procédure qui calcule et affiche la somme de deux entiers :
+<pre>void afficherSomme(int a, int b) {
+    int somme = a + b;
+    printf("La somme de %d et %d est : %d\n", a, b, somme);
+}</pre>
+Dans cet exemple, la procédure "afficherSomme" prend deux entiers "a" et "b" comme paramètres. Elle calcule la somme des deux entiers et l'affiche à l'écran à l'aide de la fonction `printf`.</p>
+<p>L'appel d'une procédure avec des paramètres se fait en fournissant les valeurs appropriées lors de l'appel. Par exemple :
+<br><pre>afficherSomme(3, 5);</pre>
+Dans cet exemple, la procédure "afficherSomme" est appelée avec les arguments 3 et 5. La somme des deux nombres est calculée et affichée à l'écran.</p>
+<p class="resume">Bien que le langage C n'ait pas de type de données spécifique pour les procédures, vous pouvez utiliser des fonctions de type "void" pour créer des procédures qui effectuent des tâches sans renvoyer de valeur.</p>
+</section>
+<section>
+    <h1>Les fonctions d'entrée-sortis standard</h1>
+    Les fonctions "printf" et "scanf" sont deux fonctions d'entrée/sortie très importantes en langage C. Elles sont utilisées pour respectivement afficher des données formatées à l'écran et lire des données à partir de l'entrée standard (généralement le clavier).<br>
+     Voici une explication plus détaillée de chacune d'entre elles :
+
+ <ul class="li">
+    <li>printf :</li>
+    La fonction (printf) est utilisée pour afficher des données formatées sur la sortie standard (généralement le terminal).
+   Elle prend en paramètres une chaîne de format et des arguments supplémentaires pour spécifier les valeurs à afficher.
+   La chaîne de format contient des spécificateurs de format (comme "%d" pour un entier, "%f" pour un nombre à virgule flottante, "%s" pour une chaîne de caractères, etc.) qui sont remplacés par les valeurs correspondantes des arguments.
+   La fonction (printf) retourne le nombre de caractères affichés.
+   Exemple :
+   <pre>
+   int age = 25;
+   printf("J'ai %d ans.\n", age);
+   </pre>
+ 
+    <li>scanf :</li>
+     La fonction (scanf) est utilisée pour lire des données formatées à partir de l'entrée standard (clavier) et les stocker dans des variables spécifiées.
+     Elle prend en paramètres une chaîne de format spécifiant le type de données à lire et des adresses de variables où stocker les valeurs lues.
+    Les spécificateurs de format utilisés dans 
+
+    (scanf) sont similaires à ceux utilisés dans (printf).
+    La fonction (scanf) retourne le nombre de valeurs correctement lues et affectées.
+   Exemple :
+   <pre>
+   int nombre;
+   scanf("%d", &nombre);
+   </pre>
+<p>Il est important de noter que les spécificateurs de format utilisés dans (printf) et (scanf) doivent correspondre aux types de données des variables spécifiées. 
+    De plus, il est crucial d'utiliser l'opérateur "&" avant le nom de la variable dans (scanf) pour indiquer l'adresse mémoire où stocker la valeur lue.</p>
+
+<p>Il existe également des variantes de (printf) et (scanf) comme (fprintf) et (fscanf) qui sont utilisées pour effectuer des opérations similaires, 
+    mais avec des fichiers plutôt qu'avec l'entrée et la sortie standard.</p>
+</section>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>

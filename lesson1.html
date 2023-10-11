@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+            <h1>Les étapes d’exécution d’un programme en C</h1>
+            <p>Le C est un langage compilé (par opposition aux langages interprétés). Cela signifie qu’un
+            programme C est décrit par un fichier texte, appelé fichier source. Ce fichier n’étant évidemment pas exécutable par le microprocesseur, il faut le traduire en langage machine. Cette
+            opération est effectuée par un programme appelé compilateur. </p>
+            <p>La compilation se décompose en fait en 4 phases successives :
+            <ol class="comp">
+                <li>Le traitement par le préprocesseur : </li>le fichier source est analysé par le préprocesseur qui effectue des transformations purement textuelles (remplacement de chaînes de
+            caractéres, inclusion d’autres fichiers source . . . ).
+                <li>La compilation : </li>la compilation proprement dite traduit le fichier généré par le préprocesseur en assembleur, c’est-à-dire en une suite d’instructions du microprocesseur
+            qui utilisent des mnémoniques rendant la lecture possible.
+                <li>L’assemblage : </li>cette opération transforme le code assembleur en un fichier binaire,
+            c’est-à-dire en instructions directement compréhensibles par le processeur. Généralement, la compilation et l’assemblage se font dans la foulée, sauf si l’on spécifie explicitement que l’on veut le code assembleur. Le fichier produit par l’assemblage est appelé
+            fichier objet.
+                <li>L’édition de liens : </li>un programme est souvent séparé en plusieurs fichiers source, pour des raisons de clarté mais aussi parce qu’il fait généralement appel à des librairies de
+            fonctions standard déjà écrites. Une fois chaque code source assemblé, il faut donc lier entre eux les différents fichiers objets. L’édition de liens produit alors un fichier dit
+            exécutable.</ol></p>
+            <p>
+                Les différents types de fichiers utilisés lors de la compilation sont distingués par leur suffixe:
+                <table class="tab1">
+                    <tr>
+                        <td>Les fichiers sources</td>
+                        <td>.c</td>
+                    </tr>
+                    <tr>
+                        <td>Les fichiers prétraités par le prèprocesseur</td>
+                        <td>.i</td>
+                    </tr>
+                    <tr>
+                        <td>Les fichiers assembleur</td>
+                        <td>.s</td>
+                    </tr>
+                    <tr>
+                        <td>Les fichiers objet</td>
+                        <td>.o</td>
+                    </tr>
+                    <tr>
+                        <td>Les fichiers exécutable</td>
+                        <td>.exe</td>
+                    </tr>
+                </table>
+            <section>
+                <h1>Comment écrire notre programme en C ?</h1>
+                Pour pouvoir coder en C, il faut d'abord avoir à sa disposition un éditeur du texte comme par exemple "Bloc-note de windows".
+                Il faut aussi un compilateur pour faire la traduction de votre code en langage machine aussi appelé langage binaire, par exemple
+                vous pouvez utilisez le compilateur gcc de linux ou mingw spécifique pour le système windows.<br>
+                Voici, comment exécuter un programme C dépuis la ligne de commande :<pre>gcc fichier_source.c -o fichier_exe</pre>
+                Vous pouvez aussi vous facilitez la vie en utilisant un IDE (un environnement de développement integré)
+                qui sert à assembler les outils de compilation. Vous avez le choix de coder en C soit en utilisant les outils nécesaire à la compilation séparément ou assemblé grace aux IDE.
+                Particuliérement, je vous conseille d'utiliser un IDE comme CodeBlock si vous êtes débutant car avec un IDE vous avez en plus des outils de compilation des outils pour faire le débogage de votre code.
+            </section>
+    <section>
+        <h1>Structure de base d'un Programme en C</h1>
+        <h2>Hello World !!!</h2>
+        <pre>
+            #include&lt;stdio.h&gt;
+            #include&lt;stdlib.h&gt;
+            
+            int main(void){
+                    printf("Salut tout le monde !!!");
+                return 0;
+            }
+        </pre>
+        <p>
+            Les includes (les lignes commençant par #) sont les directives de préprocesseur. Ils servent à inclure des fichiers appelés fichiers d’entête (header) propre au langage C dépuis la bibliothèque standard du C.
+            On peut aussi faire l'inclusion de nos propres fichiers d'entête que nous verrons plus tard.<br>
+            <em>main</em> est la fonction principale du C, tout programme en  C doit contenir la fonction main. Elle est le point d’entrée de notre programme.
+            C’est à l’intérieur de cette fonction que nous allons écrire notre code source. 
+            Elle retourne un entier (0) s’il n’ya pas d’erreurs dans le code ou un nombre différent de 0 en cas d’erreurs.
+            <pre>printf("Salut tout le monde !!!");</pre>Cette instruction à l'intérieur du main permet d'afficher le texte ("Salut tout le monde !!!") à l'écran.
+            printf : est une fonction propre au langage C qui est accessible gràce à l'inclusion de la bibliothèque nécesaire qui le "stdio.h" (standard input/output) contenant les fonctions d'entrée-sortis du C.
+            Attention !!! Tout programme en C se termine par un point-virgule qui marque la fin de chaque instruction.
+
+        </p>
+        <p>
+            <h2>Les Commentaires en C</h2>
+Les commentaires sont de texte qu'on ajoute à notre code source afin d'expliquer les instructions. Les commentaires n'influencent pas le comportement du programme et ils ne sont pas traités par le compilateur.
+Ils sont très utile lorsqu'on travaille en binôme ou sur un projet complexe.<br>
+Il existe deux manière de faire les commentaires en C :
+<ol>
+    <li>Commentaire sur une seule ligne : </li> <pre>// ceci est un commentaire sur une ligne</pre>
+    <li>Commentaire sur plusieurs lignes : </li><pre> /*  ceci est un commentaire <br> sur plusieurs <br> ligne */</pre></ol>
+        </p>
+       
+    </section>
+    <section>
+        <h1>Les variables</h1>
+<p>Les variables sont utilisées pour stocker et manipuler des données. 
+Une variable est un espace mémoire nommé qui peut contenir une valeur. Avant d'utiliser une variable en C, vous devez la déclarer, c'est-à-dire spécifier son type et son nom.</p>
+<p>Déclaration d 'une variable : C’est demander au système d’exploitation de réserver un espace mémoire pour pouvoir stocker les données qu’on souhaite manipuler.
+ Pour déclarer une variable, vous devez spécifier son type suivi de son nom. Par exemple, pour déclarer une variable entière nommée "age", vous pouvez utiliser la syntaxe suivante :		
+ <pre>int age;</pre></p>
+
+
+<p>Types de données : Le langage C prend en charge différents types de données, tels que :
+    <ul>
+        <li>Les entiers : int, short, long</li>
+	    <li>les nombres à virgule flottante : float, double</li>
+	    <li>les caractères : char</li>
+	    <li>les booléens : bool etc.</li>
+    </ul>
+ Vous devez choisir le type approprié en fonction des données que vous souhaitez stocker.
+<p>Attribution de valeur : Après avoir déclaré une variable, vous pouvez lui attribuer une valeur à l'aide de l'opérateur d'affectation (=). Par exemple, pour attribuer la valeur 25 à la variable "age", vous pouvez écrire :
+<pre>age = 25;</pre></p>
+
+<p>Vous pouvez également initialiser une variable lors de sa déclaration en spécifiant une valeur initiale :<pre>int age = 25;</pre></p>
+   
+<p>Lecture de valeur : Vous pouvez accéder à la valeur d'une variable en utilisant son nom. Par exemple, pour afficher la valeur de la variable "age", vous pouvez utiliser une fonction d'affichage comme "printf" :
+<pre>printf("L'âge est : %d\n", age);</pre>
+ Ici, "%d"  est utilisé pour afficher une valeur entière qui (age).<br>
+        "%f" : pour un nombre flottant<br>
+        "%c" : pour une caractére<br>
+        "%s" : pour le chaine de caractères que nous verrons un peu loin<br></p>
+
+<p>Modification de valeur : Après avoir attribué une valeur initiale à une variable, vous pouvez la modifier en utilisant l'opérateur d'affectation. Par exemple, pour augmenter l'âge de 1, vous pouvez écrire :<br>
+<pre>age = age + 1;</pre></p>
+   
+Une autre façon d'incrémenter la valeur d'une variable est d'utiliser l'opérateur d'incrémentation (++) :
+<pre>age++;</pre>
+
+<p><h3>Règles de nommage d’une variable :</h3></p>
+
+ Les noms d'une variable doit :
+<ul>
+    <li>Commençer par une lettre ou un underscore</li>
+    <li>Pas d’espaces</li>
+    <li>Pas de caractères spéciaux</li>
+    <li>Pas d’accent</li>
+    <li>Être explicite</li>
+</ul>
+<strong>Les noms de variables sont sensibles à la casse, ce qui signifie que "age" et "Age" sont considérés comme deux variables distinctes.</strong>
+
+<p><h3>Portée des variables :</h3>
+     En C, les variables ont une portée, c'est-à-dire la partie du code dans laquelle elles sont accessibles. 
+     Par exemple, une variable déclarée à l'intérieur d'une fonction main est généralement visible uniquement à l'intérieur de cette fonction.</p>
+<p>
+    <h3>Les constantes</h3>
+    Les constantes sont des variables particuliéres qui sont disponible uniquement en lecture dans une programme.
+    Ils sont généralement en majuscules et ils sont déclarés au début du programme.Elles sont souvent utilisées pour représenter des valeurs fixes et des paramètres qui ne changent pas.<br>
+    Il existe deux façon de déclarer une constante, soit avec le mots clés "const" ou soit grâce au "define" qui est une directive de préprocesseur.
+    <pre>const int PI=3,14;</pre>
+    <pre>#define Pi 3.14</pre>
+</p>
+    </section>
+    <section>
+        <h1>Les Expressions</h1>
+<p>Les expressions sont utilisées pour effectuer des opérations sur les valeurs de la variable. 
+Une expression est une combinaison de variables, de constantes, d'opérateurs et de fonctions qui produit une valeur.
+Voici quelques exemples d'utilisation des variables dans des expressions :</p>
+
+<ul class="li">
+    <li>Opérations arithmétiques : </li>
+    Les variables peuvent être utilisées dans des expressions arithmétiques pour effectuer des calculs. Par exemple :
+<pre>
+    int a = 5;
+    int b = 3;
+    int c = a + b;  // Addition
+    int d = a * b;  // Multiplication
+    int e = a - b;  // Soustraction
+    int f = a / b;  // Division entière</pre><br>
+   Dans cet exemple, les variables (a) et (b) sont utilisées pour effectuer des opérations d'addition, de multiplication, de soustraction et de division.
+
+	<li>Opérations de comparaison : </li>
+    Les variables peuvent également être utilisées dans des expressions de comparaison pour évaluer des conditions. Par exemple :
+  <pre> 
+    int a = 5;
+    int b = 3;
+    int c = (a > b);    // Vrai si a est supérieur à b, faux sinon
+    int d = (a == b);   // Vrai si a est égal à b, faux sinon
+    int e = (a <= b);   // Vrai si a est inférieur ou égal à b, faux sinon</pre><br>
+   Dans cet exemple, les variables (a) et (b) sont utilisées pour comparer les valeurs à l'aide des opérateurs de comparaison tels que ">", "==", "<=", etc.<br>
+
+    <li>Opérations logiques : </li>
+    Les variables peuvent être utilisées dans des expressions logiques pour évaluer des conditions complexes. Par exemple :
+   <pre class="pro1">
+    int a = 5;
+    int b = 3;
+    int c = (a > 0) && (b < 10);  // Vrai si a est strictement positif et b est strictement inférieur à 10
+    int d = (a == 0) || (b == 0); // Vrai si a est égal à 0 ou b est égal à 0
+    int e = !(a > b);             // Vrai si a n'est pas supérieur à b</pre>
+   Dans cet exemple, les variables (a) et (b) sont utilisées dans des expressions logiques avec les opérateurs `&&` (ET), `||` (OU) et `!` (NON).
+
+    <li>Assignation de valeur : </li>
+    Les variables peuvent être utilisées dans des expressions pour assigner une nouvelle valeur à une variable. Par exemple :
+   <pre>
+    int a = 5;
+    int b = 3;
+    a = b + 2;  // La variable a prend la valeur de b + 2 (5)</pre><br>
+  Dans cet exemple, la variable (a) est mise à jour en utilisant une expression.
+
+	<li>Utilisation de fonctions : </li>
+    Les variables peuvent être utilisées comme arguments de fonctions pour effectuer des opérations plus complexes. Par exemple :
+   <pre>
+    int a = 5;
+    int b = 3;
+    int c = add(a, b);  // Appel d'une fonction "add" avec les variables a et b comme.</pre>
+   </ul>
+   <p class="resume">En résumé, les variables sont un concept essentiel dans la programmation et sont utilisées pour stocker et manipuler des données tout au long de l'exécution d'un programme.</p>
+
+    </section>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>

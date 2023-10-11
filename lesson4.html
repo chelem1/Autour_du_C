@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du langage C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/jpg" href="Images/back.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="h1">😎 Survoler Autour du langage C 🤗</h1>
+    </header>
+        <nav>
+            <p class="p"><img src="Images/back.jpg" alt="image logo" width="100%"></p>
+            <ul class="ul">
+                <li><a href="lesson1.html">Variables</a></li>
+                <li><a href="lesson2.html">Conditions</a></li>
+                <li><a href="lesson3.html">Boucles</a></li>
+                <li><a href="lesson4.html">Tableaux</a></li>
+                <li><a href="lesson5.html">Fonctions &amp; Procédures</a></li>
+                <li><a href="lesson6.html">Pointeur</a></li>
+                <li><a href="lesson7.html">Fichier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+                <div class="div1">
+                    <a href="inscription.html"><img src="Images/add-user.png" alt="inscription"width="7%"> Inscription</a>
+                    <a href="login.html"><img src="Images/user.png" width="7%"> Login</a>
+                </div>
+        </nav>
+        <div id="general">
+    <section>
+        <h1>Les Tableaux</h1>
+<p>Un tableau est une structure de données qui permet de stocker un ensemble de valeurs de même type. Un tableau est défini comme une collection contiguë d'éléments, où chaque élément est accessible à l'aide d'un index.</p>
+<p>Voici comment déclarer et utiliser un tableau en C :
+
+<ul class="li">
+    <li>Déclaration d'un tableau :</li>
+Pour déclarer un tableau en C, vous devez spécifier le type des éléments du tableau, suivie du nom du tableau et de sa taille entre crochets []. Par exemple, pour déclarer un tableau d'entiers de taille 5 :
+<pre>int tableau[5];</pre>
+Dans cet exemple, un tableau nommé "tableau" de type "int" et de taille 5 est déclaré.
+    <li>Initialisation d'un tableau :</li>
+Vous pouvez également initialiser un tableau lors de sa déclaration en spécifiant les valeurs initiales des éléments entre accolades {}. Par exemple, pour initialiser un tableau d'entiers avec les valeurs 1, 2, 3, 4, 5 :		
+<pre>int tableau[] = {1, 2, 3, 4, 5};</pre><br>
+Dans cet exemple, la taille du tableau est automatiquement déterminée en fonction du nombre d'éléments spécifiés.
+    <li>Accès aux éléments d'un tableau :</li>
+Pour accéder aux éléments individuels d'un tableau, vous utilisez l'index de l'élément souhaité entre crochets []. L'index commence à zéro pour le premier élément et se termine à taille-1 pour le dernier élément. Par exemple, pour accéder au troisième élément du tableau :
+<pre>int valeur = tableau[2];</pre>
+Dans cet exemple, la valeur 3ème élément du tableau est stockée dans la variable "valeur".
+    <li>Modification des éléments d'un tableau :</li>
+Vous pouvez modifier les valeurs des éléments d'un tableau en utilisant l'opérateur d'affectation (=). Par exemple, pour modifier la valeur du deuxième élément du tableau :
+<pre>tableau[1] = 10;</pre>
+Dans cet exemple, la valeur du deuxième élément est modifiée pour devenir 10.
+    <li>Parcours d'un tableau avec une boucle :</li>
+Une façon courante d'accéder à tous les éléments d'un tableau est d'utiliser une boucle, telle que la boucle (for) ou la boucle (while). Par exemple, pour afficher tous les éléments d'un tableau :
+<br><pre>for (int i = 0; i < 5; i++) {
+    printf("%d ", tableau[i]);
+}</pre>
+Dans cet exemple, une boucle (for) est utilisée pour itérer à travers tous les indices du tableau et afficher les éléments correspondants.
+Il est important de faire attention aux indices lors de l'accès aux éléments d'un tableau pour éviter les dépassements de mémoire et les erreurs d'accès.</p>
+    </section>
+    <section>
+        <h1>Tableaux À Plusieurs Dimensions</h1>
+<p>Il est possible de déclarer des tableaux à plusieurs dimensions, également appelés tableaux multidimensionnels. Les tableaux multidimensionnels sont utilisés lorsque vous avez besoin de stocker des données dans une structure en deux dimensions (tableau à deux dimensions), en trois dimensions (tableau à trois dimensions), ou même dans des dimensions supérieures.</p>
+Voici comment déclarer et utiliser un tableau multidimensionnel en C :
+<ul class="li">
+    <li>Déclaration d'un tableau multidimensionnel :</li>
+Pour déclarer un tableau multidimensionnel en C, vous devez spécifier le type des éléments du tableau, suivi du nom du tableau et des tailles des dimensions entre crochets []. Par exemple, pour déclarer un tableau à deux dimensions de taille 3x3 pour stocker des entiers :
+<pre>int tableau[3][3];</pre>
+Dans cet exemple, un tableau multidimensionnel nommé "tableau" de type "int" et de taille 3x3 est déclaré.
+
+    <li>Initialisation d'un tableau multidimensionnel :</li>
+Vous pouvez également initialiser un tableau multidimensionnel lors de sa déclaration en spécifiant les valeurs initiales des éléments. Par exemple, pour initialiser un tableau à deux dimensions avec les valeurs 1, 2, 3, 4, 5, 6, 7, 8, 9 :
+<pre>int tableau[3][3] = {
+    {1, 2, 3}, 
+    {4, 5, 6}, 
+    {7, 8, 9}
+ };</pre>
+Dans cet exemple, un tableau multidimensionnel de taille 3x3 est initialisé avec les valeurs spécifiées.
+    <li>Accès aux éléments d'un tableau multidimensionnel :</li>
+Pour accéder aux éléments individuels d'un tableau multidimensionnel, vous utilisez les indices correspondants à chaque dimension, séparés par des crochets []. Par exemple, pour accéder à l'élément situé à la deuxième ligne et à la troisième colonne :
+<pre>int valeur = tableau[1][2];</pre>
+Dans cet exemple, la valeur de l'élément à la deuxième ligne et à la troisième colonne est stockée dans la variable "valeur".
+    <li>Modification des éléments d'un tableau multidimensionnel :</li>
+Vous pouvez modifier les valeurs des éléments d'un tableau multidimensionnel en utilisant l'opérateur d'affectation (=) avec les indices appropriés. Par exemple, pour modifier la valeur de l'élément situé à la première ligne et à la deuxième colonne :
+<br><pre>tableau[0][1] = 10;</pre>
+Dans cet exemple, la valeur de l'élément à la première ligne et à la deuxième colonne est modifiée pour devenir 10.
+    <li>Parcours d'un tableau multidimensionnel avec des boucles :</li>
+Pour parcourir un tableau multidimensionnel, vous pouvez utiliser des boucles imbriquées correspondant aux dimensions du tableau. Par exemple, pour afficher tous les éléments d'un tableau à deux dimensions :
+<pre>for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d ", tableau[i][j]);
+    }
+    printf("\n");
+}</pre><br>
+Dans cet exemple, deux boucles (for) sont utilisées pour itérer à travers les indices des lignes et des colonnes du tableau, puis les éléments correspondants sont affichés.
+<p class="resume">En résumé, les tableaux en C sont des structures de données puissantes et couramment utilisées pour stocker et manipuler des collections d'éléments de même type.</p> 
+<p>Attention !!! <em>Les chaines de caractères : sont des tableaux de type <strong>char</strong>.</em></p>
+</section>
+</div>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=100091828512806&mibextid=9R9pXO" target="_blank"><img src="Images/facebook.png" alt="logo facebook"></a>
+    <a href="https://www.snapchat.com/add/chelemmed?share_id=Yiq7ibXw7K0&locale=fr-FR" target="_blank"><img src="Images/snapchat.png" alt="logo snapchat"></a>
+    <a href="https://www.linkedin.com/Chehem Mohamed" target="_blank"><img src="Images/linkedin.png" alt="logo linkedIn"></a>
+    <p>Copyright &copy;2023 CMH Production Tout droit reservé</p>
+</footer>
+</body>
+</html>
